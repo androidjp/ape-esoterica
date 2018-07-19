@@ -8,11 +8,11 @@ Page({
     eMenu: [
       {
         label: 'windows快捷键',
-        url: '../keymap/keymap'
+        url: '../keymap/keymap?key=win'
       },
       {
         label: 'MacOS快捷键',
-        url: '../keymap/mac/index'
+        url: '../keymap/keymap?key=mac'
       },
       {
         label: 'Inteillj Idea快捷键',

@@ -1,5 +1,7 @@
 // pages/keymap/keymap.js
 const app = getApp()
+import keymapWinData from './keymapWin.js'
+import keymapMacData from './keymapMac.js'
 
 Page({
 
@@ -16,14 +18,24 @@ Page({
   onLoad: function(options) {
     let that = this;
     console.log('load data start.')
-    that.loadKeymapWin((err, resList) => {
-      if (!err) {
+    wx.setNavigationBarTitle({
+      title: options.key + '快捷键' //页面标题为路由参数
+    })
+
+    console.log(keymapWinData)
+    console.log(keymapMacData)
+    switch (options.key) {
+      case 'win':
         that.setData({
-          keymapList: resList
+          keymapList: keymapWinData.data
         })
-        console.log('load data finished.')
-      }
-    });
+        break;
+      case 'mac':
+        that.setData({
+          keymapList: keymapMacData.data
+        })
+        break;
+    }
   },
 
   /**
@@ -73,19 +85,6 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-
-  loadKeymapWin: function(callback) {
-    let keymapList = [{
-        option: 'win + D',
-        explain: '隐藏所有窗口（再按一次还原）'
-      },
-      {
-        option: 'win + R',
-        explain: '弹出`运行`（可输入cmd、mstsc等指令）'
-      },
-    ];
-
-    callback(null, keymapList);
   }
+
 })
