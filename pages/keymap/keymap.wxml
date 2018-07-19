@@ -1,0 +1,14 @@
+<!--pages/keymap/keymap.wxml-->
+<view>
+  <scroll-view>
+
+    <view wx:for="{{keymapList}}" wx:key="{{item}}" class="card">
+      <label class="keymap-label-style">{{item.option}}</label>
+      <view>
+       作用：{{item.explain}}
+      </view>
+    </view>
+
+  </scroll-view>
+</view>
+

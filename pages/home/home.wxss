@@ -1,0 +1,8 @@
+/* pages/home.wxss */
+.menu-item-style {
+  padding: 12px;
+  background: yellowgreen;
+  border-top: 2px #aaa solid;
+  border-bottom: 2px #aaa solid;
+}
+

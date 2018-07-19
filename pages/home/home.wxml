@@ -1,0 +1,12 @@
+<!--home.wxml-->
+<view>
+  <scroll-view>
+
+    <view wx:for="{{eMenu}}" wx:key="{{item}}" class="card">
+      <view bindtap="displayTab" data-url="{{item.url}}">
+       (^v^) {{item.label}}
+      </view>
+    </view>
+
+  </scroll-view>
+</view>
