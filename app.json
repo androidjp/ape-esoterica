@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/home/home",
     "pages/logs/logs",
-    "pages/keymap/keymap"
+    "pages/keymap/keymap",
+    "pages/cmd/cmd"
   ],
   "window": {
     "backgroundTextStyle": "light",

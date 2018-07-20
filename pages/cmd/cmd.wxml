@@ -1,14 +1,13 @@
-<!--pages/keymap/keymap.wxml-->
+<!--pages/cmd/cmd.wxml-->
 <view>
   <scroll-view>
 
-    <view wx:for="{{keymapList}}" wx:key="{{item}}" class="card">
+    <view wx:for="{{cmdList}}" wx:key="{{item}}" class="card">
       <label class="common-label-style">{{item.option}}</label>
       <view>
-       {{item.keymap}}
+        {{item.cmd}}
       </view>
     </view>
 
   </scroll-view>
 </view>
-

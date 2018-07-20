@@ -1,7 +1,6 @@
-// pages/keymap/keymap.js
-const app = getApp()
-import keymapWinData from '../../data/keymapWin.js'
-import keymapMacData from '../../data/keymapMac.js'
+// pages/cmd/cmd.js
+
+import cmdSshData from '../../data/cmdSsh.js'
 
 Page({
 
@@ -9,30 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    keymapList: []
+    cmdList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let that = this;
-    console.log('load data start.')
     wx.setNavigationBarTitle({
-      title: options.key + '快捷键' //页面标题为路由参数
+      title: options.key + '命令' //页面标题为路由参数
     })
 
-    console.log(keymapWinData)
-    console.log(keymapMacData)
     switch (options.key) {
-      case 'win':
-        that.setData({
-          keymapList: keymapWinData.data
-        })
-        break;
-      case 'mac':
-        that.setData({
-          keymapList: keymapMacData.data
+      case 'ssh':
+        this.setData({
+          cmdList: cmdSshData.data
         })
         break;
     }
@@ -86,5 +76,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-
 })

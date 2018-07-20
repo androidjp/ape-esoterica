@@ -8,39 +8,28 @@ Page({
     eMenu: [
       {
         label: 'windows快捷键',
-        url: '../keymap/keymap?key=win'
+        url: '../keymap/keymap?key=win',
+        enable: true
       },
       {
         label: 'MacOS快捷键',
-        url: '../keymap/keymap?key=mac'
+        url: '../keymap/keymap?key=mac',
+        enable: true        
       },
       {
         label: 'Inteillj Idea快捷键',
-        url: '../keymap/ij'
+        url: '../keymap/ij',
+        enable: false        
       },
       {
         label: 'WeChat开发者工具快捷键',
-        url: '../keymap/wechatApp'
-      },
-      {
-        label: 'WeChat开发者工具快捷键',
-        url: '../keymap/wechatApp'
-      },
-      {
-        label: 'WeChat开发者工具快捷键',
-        url: '../keymap/wechatApp'
-      },
-      {
-        label: 'WeChat开发者工具快捷键',
-        url: '../keymap/wechatApp'
-      },
-      {
-        label: 'WeChat开发者工具快捷键',
-        url: '../keymap/wechatApp'
+        url: '../keymap/wechatApp',
+        enable: false        
       },
       {
         label: 'ssh命令',
-        url: '../cmd/ssh'
+        url: '../cmd/cmd?key=ssh',
+        enable: true        
       }
     ]
   },

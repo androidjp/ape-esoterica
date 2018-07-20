@@ -2,9 +2,15 @@
 <view>
   <scroll-view>
 
-    <view wx:for="{{eMenu}}" wx:key="{{item}}" class="card">
-      <view bindtap="displayTab" data-url="{{item.url}}">
-       (^v^) {{item.label}}
+
+
+
+    <view wx:for="{{eMenu}}" wx:key="{{item}}">
+      <view wx:if="{{item.enable}}" bindtap="displayTab" data-url="{{item.url}}" class="card">
+        (^v^) {{item.label}}
+      </view>
+      <view wx:else class="card-disable">
+        (No_No) {{item.label}}
       </view>
     </view>
 
