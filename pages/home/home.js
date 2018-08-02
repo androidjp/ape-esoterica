@@ -30,7 +30,12 @@ Page({
         label: 'ssh命令',
         url: '../cmd/cmd?key=ssh',
         enable: true        
-      }
+      },
+      {
+        label: 'git命令',
+        url: '../cmd/cmd?key=git',
+        enable: true
+      },
     ]
   },
 

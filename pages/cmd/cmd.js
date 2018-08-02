@@ -1,6 +1,7 @@
 // pages/cmd/cmd.js
 
 import cmdSshData from '../../data/cmdSsh.js'
+import cmdGitData from '../../data/cmdGit.js'
 
 Page({
 
@@ -23,6 +24,11 @@ Page({
       case 'ssh':
         this.setData({
           cmdList: cmdSshData.data
+        })
+        break;
+      case 'git':
+        this.setData({
+          cmdList: cmdGitData.data
         })
         break;
     }
