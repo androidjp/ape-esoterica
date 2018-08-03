@@ -34,6 +34,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    yuyin: {
+      apiKey: 'fe948b5888b488de1251549019739c75',
+      apiUrl: 'ws://rtasr.xfyun.cn/v1/ws'
+    }
   }
 })
