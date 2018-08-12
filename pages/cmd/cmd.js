@@ -1,15 +1,13 @@
 // pages/cmd/cmd.js
 
-import cmdSshData from '../../data/cmdSsh.js'
-import cmdGitData from '../../data/cmdGit.js'
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cmdList: []
+    cmdList: [],
+    path: '../../data/'
   },
 
   /**
@@ -20,18 +18,10 @@ Page({
       title: options.key + '命令' //页面标题为路由参数
     })
 
-    switch (options.key) {
-      case 'ssh':
-        this.setData({
-          cmdList: cmdSshData.data
-        })
-        break;
-      case 'git':
-        this.setData({
-          cmdList: cmdGitData.data
-        })
-        break;
-    }
+    let key = `${this.data.path}cmd${options.key[0].toUpperCase()}${options.key.substring(1)}.js`;
+    this.setData({
+      cmdList: require(key).data
+    })
   },
 
   /**

@@ -36,6 +36,16 @@ Page({
         url: '../cmd/cmd?key=git',
         enable: true
       },
+      {
+        label: 'mongo命令',
+        url: '../cmd/cmd?key=mongo',
+        enable: true
+      },
+      {
+        label: 'Ubuntu命令',
+        url: '../cmd/cmd?key=ubuntu',
+        enable: true
+      },
     ]
   },
 
