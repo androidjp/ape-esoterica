@@ -1,30 +1,6 @@
 <!--pages/cmd/cmd.wxml-->
 <view>
   <scroll-view>
-
-    <view wx:for="{{cmdList}}" wx:key="{{item}}" class="card">
-      <label class="common-label-style">{{item.option}}</label>
-      <view wx:if="{{item.isCmdList}}">
-        <view wx:for="{{item.cmd}}" wx:key="{{item}}" class="card">
-          <label wx:if="{{item.option}}" class="code-label-style">{{item.option}}</label>
-          
-          <view wx:if="{{item.isCmdList}}">
-            <view wx:for="{{item.cmd}}" wx:key="{{item}}" class="card">
-              <label wx:if="{{item.option}}" class="code-label-style">{{item.option}}</label>
-              <br/>
-              <label class="code-style">{{item.cmd}}</label>
-            </view>
-          </view>
-          <view wx:else>
-          <label class="code-style">{{item.cmd}}</label>
-          </view>
-          
-        </view>
-      </view>
-      <view wx:else>
-        <label class="code-style">{{item.cmd}}</label>
-      </view>
-    </view>
-
+    <ape-card cmd-list="{{cmdList}}"/>
   </scroll-view>
 </view>

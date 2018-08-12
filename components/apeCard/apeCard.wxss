@@ -1,0 +1,31 @@
+/* pages/common/apeCard.wxss */
+
+.code-style {
+  margin: 4px;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: whitesmoke
+}
+
+.code-label-style {
+  margin: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #d4e2c2;
+    box-shadow: 4px 1px 1px #cccccc;
+    margin: 12px;
+    padding: 12px;
+    position: relative;
+}
+
+.common-label-style {
+  font-size: 20px;
+  font-weight: bold;
+  padding:8px;
+}

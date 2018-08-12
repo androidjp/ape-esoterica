@@ -1,15 +1,2 @@
 /* pages/cmd/cmd.wxss */
 
-.code-style {
-  margin: 4px;
-  padding: 2px;
-  border-radius: 4px;
-  font-size: 12px;
-  background: whitesmoke
-}
-
-.code-label-style {
-  margin: 4px;
-  font-size: 14px;
-  font-weight: bold;
-}
