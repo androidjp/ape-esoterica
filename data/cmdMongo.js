@@ -1,5 +1,6 @@
 let data = [{
     option: '阿里云Ubuntu16.04快速安装MongoDB',
+    isCmdList: true,
     cmd: [{
         option: '',
         cmd: 'sudo apt-get install mongodb'
@@ -22,6 +23,7 @@ let data = [{
       },
       {
         option: '开放外部ip访问27017端口',
+        isCmdList: true,
         cmd: [
           {
             option: '改配置文件中的 bindIp 为 0.0.0.0',
@@ -41,6 +43,7 @@ let data = [{
   },
   {
     option: '常用命令',
+    isCmdList: true,
     cmd: [
       {
         option:'显示数据库列表',
