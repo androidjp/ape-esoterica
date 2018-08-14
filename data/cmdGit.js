@@ -60,11 +60,10 @@ let data = [{
   },
   {
     option: 'git push <remote> <place> 做了啥',
-    cmd: [
-      {
-        option: '完整流程就是：切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去，搞定之后告诉我。'
-      }
-    ]
+    isCmdList: true,
+    cmd: [{
+      option: '完整流程就是：切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去，搞定之后告诉我。'
+    }]
   }
 ]
 
