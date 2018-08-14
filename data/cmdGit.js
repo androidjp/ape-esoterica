@@ -62,8 +62,60 @@ let data = [{
     option: 'git push <remote> <place> 做了啥',
     isCmdList: true,
     cmd: [{
-      option: '完整流程就是：切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去，搞定之后告诉我。'
+      option: '完整流程就是：切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去，搞定之后告诉我。',
+      cmd: 'git push origin master'
     }]
+  },
+  {
+    option: 'git push origin <source>:<destination>',
+    isCmdList: true,
+    cmd: [{
+        option: '如果我想推送本地 foo 分支的上一个commit，到远程的master分支上',
+        cmd: 'git push origin foo^:master'
+      },
+      {
+        option: '最厉害的是，如果dest 在远程没有，那么，远程会自动创建这个新分支',
+        cmd: 'git push origin master:newMaster'
+      }
+    ]
+  },
+  {
+    option: 'git fetch 高级用法',
+    isCmdList: true,
+    cmd: [{
+        option: '单单下载远程分支o/foo中的新提交，到本地分支foo [注意：只update foo，位于本地的 o/foo并没有移动]',
+        cmd: 'git fetch origin foo'
+      },
+      {
+        option: '下载远程分支A的新内容，到本地分支B中(本地分支B如果不存在，会自动创建)',
+        cmd: 'git fetch origin A:B'
+      },
+      {
+        option: 'fetch下载所有的分支新内容',
+        cmd: 'git fetch'
+      }
+    ]
+  },
+  {
+    option: '删除远程分支o/foo [注意：本地分支foo并没有被删除]',
+    cmd: 'git push origin :foo'
+  },
+  {
+    option: '创建新分支',
+    isCmdList: true,
+    cmd: [{
+        option: '方式一：checkout',
+        cmd: 'git checkout -b xxx'
+      },
+      {
+        option: '方式二：fetch',
+        cmd: 'git fetch origin :xxx'
+      }
+    ]
+  },
+  {
+    option: 'pull的高级用法',
+    cmd: 'git pull origin <source>:<local_dest>'
   }
 ]
 
