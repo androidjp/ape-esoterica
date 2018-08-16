@@ -18,13 +18,18 @@ Page({
       },
       {
         label: 'Inteillj Idea快捷键',
-        url: '../keymap/ij',
+        url: '../keymap/keymap?key=ij',
         enable: false        
       },
       {
         label: 'WeChat开发者工具快捷键',
-        url: '../keymap/wechatApp',
+        url: '../keymap/keymap?key=wechatApp',
         enable: false        
+      },
+      {
+        label: 'evernote快捷键',
+        url: '../keymap/keymap?key=evernote',
+        enable: true
       },
       {
         label: 'ssh命令',

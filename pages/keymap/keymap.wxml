@@ -1,14 +1,7 @@
 <!--pages/keymap/keymap.wxml-->
 <view>
   <scroll-view>
-
-    <view wx:for="{{keymapList}}" wx:key="{{item}}" class="card">
-      <label class="common-label-style">{{item.option}}</label>
-      <view>
-       {{item.keymap}}
-      </view>
-    </view>
-
+    <ape-keymap-item wx:for="{{keymapList}}" wx:key="{{item}}" keymap-item="{{item}}"/>
   </scroll-view>
 </view>
 

@@ -1,0 +1,5 @@
+<!--components/apeKeymapItem.wxml-->
+<view class="card">
+  <label class="code-label-style">{{keymapItem.option}}</label>
+  <label class="code-style">{{keymapItem.keymap}}</label>
+</view>

@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "ape-card": "apeCard"
+    "ape-keymap-item": "apeKeymapItem"
   }
 }

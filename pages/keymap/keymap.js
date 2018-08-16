@@ -1,7 +1,5 @@
 // pages/keymap/keymap.js
 const app = getApp()
-import keymapWinData from '../../data/keymapWin.js'
-import keymapMacData from '../../data/keymapMac.js'
 
 Page({
 
@@ -9,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    keymapList: []
+    keymapList: [],
+    path: '../../data/'
   },
 
   /**
@@ -22,20 +21,10 @@ Page({
       title: options.key + '快捷键' //页面标题为路由参数
     })
 
-    console.log(keymapWinData)
-    console.log(keymapMacData)
-    switch (options.key) {
-      case 'win':
-        that.setData({
-          keymapList: keymapWinData.data
-        })
-        break;
-      case 'mac':
-        that.setData({
-          keymapList: keymapMacData.data
-        })
-        break;
-    }
+    let key = `${this.data.path}keymap${options.key[0].toUpperCase()}${options.key.substring(1)}.js`;
+    this.setData({
+      keymapList: require(key).data
+    })
   },
 
   /**

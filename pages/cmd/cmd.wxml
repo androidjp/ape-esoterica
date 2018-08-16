@@ -1,6 +1,6 @@
 <!--pages/cmd/cmd.wxml-->
 <view>
   <scroll-view>
-    <ape-card cmd-list="{{cmdList}}"/>
+    <ape-card wx:for="{{cmdList}}" wx:key="{{item}}" wx:for-index="index" wx:for-item="item" cmd-item="{{item}}"/>
   </scroll-view>
 </view>

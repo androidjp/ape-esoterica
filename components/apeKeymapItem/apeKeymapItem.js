@@ -1,12 +1,12 @@
-// pages/common/apeCard.js
+// components/apeKeymapItem.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    cmdItem: {
-      type:Object,
-      value:{}
+    keymapItem: {
+      type: Object,
+      value: {}
     }
   },
 
@@ -14,6 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+
   },
 
   /**

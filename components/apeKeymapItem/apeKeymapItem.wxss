@@ -1,4 +1,4 @@
-/* pages/common/apeCard.wxss */
+/* components/apeKeymapItem.wxss */
 
 .code-style {
   margin: 4px;
