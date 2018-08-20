@@ -32,6 +32,11 @@ Page({
         enable: true
       },
       {
+        label: 'chrome快捷键',
+        url: '../keymap/keymap?key=chrome',
+        enable: true
+      },
+      {
         label: 'ssh命令',
         url: '../cmd/cmd?key=ssh',
         enable: true        
@@ -51,6 +56,11 @@ Page({
         url: '../cmd/cmd?key=ubuntu',
         enable: true
       },
+      {
+        label: 'Conda命令',
+        url: '../cmd/cmd?key=conda',
+        enable: true
+      }
     ]
   },
 
