@@ -60,6 +60,11 @@ Page({
         label: 'Conda命令',
         url: '../cmd/cmd?key=conda',
         enable: true
+      },
+      {
+        label: 'Pip命令',
+        url: '../cmd/cmd?key=pip',
+        enable: true
       }
     ]
   },
