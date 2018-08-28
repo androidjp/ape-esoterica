@@ -65,6 +65,11 @@ Page({
         label: 'Pip命令',
         url: '../cmd/cmd?key=pip',
         enable: true
+      },
+      {
+        label: 'Docker命令',
+        url: '../cmd/cmd?key=docker',
+        enable: true
       }
     ]
   },
