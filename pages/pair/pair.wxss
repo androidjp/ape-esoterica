@@ -1,0 +1,23 @@
+/* pages/pair/pair.wxss */
+
+.placeholder {
+  margin: 5px;
+  padding: 0 10px;
+  text-align: center;
+  background-color: #ebebeb;
+  height: 2.3em;
+  line-height: 2.3em;
+  color: #2c2c2c;
+  font-family: 'Courier New', Courier, monospace
+}
+
+.title {
+  margin: 5px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.handshake_img {
+  width:40px;
+  height: 40px;
+}

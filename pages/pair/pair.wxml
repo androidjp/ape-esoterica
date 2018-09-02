@@ -1,0 +1,17 @@
+<!--pages/pair/pair.wxml-->
+<view>
+
+<view class="weui-flex">
+            <view class="weui-flex__item"><view class="title">今天的pair分组</view></view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">weui</view></view>
+            <view><view class="title"><image src='../../images/shake_hands.png' class="handshake_img"></image></view></view>
+            <view class="weui-flex__item"><view class="placeholder">weui</view></view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">weui</view></view>
+            <view><view class="title"><image src='../../images/shake_hands.png' class="handshake_img"></image></view></view>
+            <view class="weui-flex__item"><view class="placeholder">weui</view></view>
+        </view>
+</view>
