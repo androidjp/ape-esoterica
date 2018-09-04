@@ -18,12 +18,12 @@ Page({
       },
       {
         label: 'Inteillj Idea快捷键',
-        url: '../keymap/keymap?key=ij',
-        enable: false        
+        url: '../keymap/keymap?key=idea',
+        enable: true        
       },
       {
         label: 'WeChat开发者工具快捷键',
-        url: '../keymap/keymap?key=wechatApp',
+        url: '../keymap/keymap?key=weChat',
         enable: false        
       },
       {

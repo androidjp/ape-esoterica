@@ -19,6 +19,10 @@ const data = [
     option: 'Refactor--Extract Parameter',
     keymap: 'Ctrl+Alt+P'
   },
+  {
+    option: '快速打开/关闭 Terminal窗口',
+    keymap: 'Alt + F12'
+  }
 ];
 
 module.exports.data = data;
