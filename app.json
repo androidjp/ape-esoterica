@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/search/search",    
     "pages/pair/pair",
     "pages/home/home",
     "pages/logs/logs",
@@ -13,23 +14,22 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-        "color": "#8a8a8a",
-        "selectedColor": "#8a8a8a",
-        "borderStyle": "black",
-        "list": [
+    "color": "#8a8a8a",
+    "selectedColor": "#8a8a8a",
+    "borderStyle": "black",
+    "list": [
       {
-              "selectedIconPath": "images/team_pressed.png",
-              "iconPath": "images/team.png",
-              "pagePath": "pages/pair/pair",
-              "text": "团队"  
-
+        "selectedIconPath": "images/team_pressed.png",
+        "iconPath": "images/team.png",
+        "pagePath": "pages/search/search",
+        "text": "团队"
       },
       {
-              "selectedIconPath": "images/code_pressed.png",
-              "iconPath": "images/code.png",
-              "pagePath": "pages/home/home",
-              "text": "秘籍"  
+        "selectedIconPath": "images/code_pressed.png",
+        "iconPath": "images/code.png",
+        "pagePath": "pages/home/home",
+        "text": "秘籍"
       }
-    ]  
+    ]
   }
 }
