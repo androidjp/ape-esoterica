@@ -22,6 +22,10 @@ const data = [
   {
     option: '快速打开/关闭 Terminal窗口',
     keymap: 'Alt + F12'
+  },
+  {
+    option: '快速进入顶部`File`工具栏',
+    keymap: 'Alt + N'
   }
 ];
 
