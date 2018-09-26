@@ -82,6 +82,11 @@ Page({
             label: 'Docker命令',
             url: '../cmd/cmd?key=docker',
             enable: true
+          },
+          {
+            label: 'Redis命令',
+            url: '../cmd/cmd?key=redis',
+            enable: true
           }
         ]
       }

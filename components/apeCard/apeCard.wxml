@@ -1,10 +1,10 @@
 <!--pages/common/apeCard.wxml-->
 <view class="card">
-  <label class="code-label-style">{{cmdItem.option}}</label>
+  <label class="code-label-style" wx:if="{{cmdItem.option}}">{{cmdItem.option}}</label>
   <view wx:if="{{cmdItem.isCmdList}}">
     <ape-card wx:for="{{cmdItem.cmd}}" wx:key="{{item}}" wx:for-index="index" wx:for-item="item" cmd-item="{{item}}"/>
   </view>
   <view wx:else>
-    <label class="code-style">{{cmdItem.cmd}}</label>
+    <label class="code-style" wx:if="{{cmdItem.cmd}}">{{cmdItem.cmd}}</label>
   </view>
 </view>
