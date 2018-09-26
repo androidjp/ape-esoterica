@@ -52,7 +52,7 @@ const data = [{
       },
       {
         option: 'Add Docker\'s official GPG key',
-        cmd: 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -'
+        cmd: 'curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -'
       },
       {
         option: '验证是否存在此key',
@@ -61,13 +61,27 @@ const data = [{
       {
         option: '设置稳定的仓库',
         cmd: 'sudo add-apt-repository \
-          "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-          $(lsb_release -cs) \
-          stable"'
+    "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"'
       },
       {
         option: '安装docker-ce [最好先update apt]',
         cmd: 'sudo apt-get install docker-ce'
+      },
+      {
+        option: '启动/关闭docker服务',
+        isCmdList: true,
+        cmd: [
+          {
+            option: '方式一',
+            cmd: 'sudo systemctl enable docker && sudo systemctl start docker'
+          },
+          {
+            option: '方式二（Ubuntu 14.04以上）',
+            cmd: 'sudo service docker start/stop'
+          }
+        ]
       },
       {
         option: '验证是否安装成功',
