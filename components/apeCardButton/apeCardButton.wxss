@@ -1,0 +1,16 @@
+/* components/apeCardButton/apeCardButton.wxss */
+.card-btn {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #acecec;
+    box-shadow: 4px 1px 1px #cccccc;
+    margin: 12px;
+    padding: 12px;
+    position: relative;
+}
+
+.code-label-style {
+  margin: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}

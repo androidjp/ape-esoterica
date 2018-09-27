@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/search/search",    
+    "pages/search/search",
     "pages/pair/pair",
     "pages/home/home",
     "pages/logs/logs",
     "pages/keymap/keymap",
-    "pages/cmd/cmd"
+    "pages/cmd/cmd",
+    "pages/website/website"
   ],
   "window": {
     "backgroundTextStyle": "light",

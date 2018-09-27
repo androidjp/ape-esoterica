@@ -1,151 +1,100 @@
 // pages/home.js
+const docs = require('../../data/docs').data;
+const cmds = require('../../data/cmds').data;
+const keymaps = require('../../data/keymaps').data;
+
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-    eMenu: [
-      {
-        id: 'keymaps',
-        name: '快捷键',
-        open: false,
-        pages: [
-          {
-            label: 'windows快捷键',
-            url: '../keymap/keymap?key=win',
-            enable: true
-          },
-          {
-            label: 'MacOS快捷键',
-            url: '../keymap/keymap?key=mac',
-            enable: true
-          },
-          {
-            label: 'Inteillj Idea快捷键',
-            url: '../keymap/keymap?key=idea',
-            enable: true
-          },
-          {
-            label: 'WeChat开发者工具快捷键',
-            url: '../keymap/keymap?key=weChat',
-            enable: false
-          },
-          {
-            label: 'evernote快捷键',
-            url: '../keymap/keymap?key=evernote',
-            enable: true
-          },
-          {
-            label: 'chrome快捷键',
-            url: '../keymap/keymap?key=chrome',
-            enable: true
-          },
-        ]
-      },
-      {
-        id: 'cmds',
-        name: '命令行',
-        open: false,
-        pages: [
-          {
-            label: 'ssh命令',
-            url: '../cmd/cmd?key=ssh',
-            enable: true
-          },
-          {
-            label: 'git命令',
-            url: '../cmd/cmd?key=git',
-            enable: true
-          },
-          {
-            label: 'mongo命令',
-            url: '../cmd/cmd?key=mongo',
-            enable: true
-          },
-          {
-            label: 'Ubuntu命令',
-            url: '../cmd/cmd?key=ubuntu',
-            enable: true
-          },
-          {
-            label: 'Conda命令',
-            url: '../cmd/cmd?key=conda',
-            enable: true
-          },
-          {
-            label: 'Pip命令',
-            url: '../cmd/cmd?key=pip',
-            enable: true
-          },
-          {
-            label: 'Docker命令',
-            url: '../cmd/cmd?key=docker',
-            enable: true
-          },
-          {
-            label: 'Redis命令',
-            url: '../cmd/cmd?key=redis',
-            enable: true
-          }
-        ]
-      }
-    ]
-  },
+  data: {},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    this.setData({
+      eMenu: [{
+          id: 'keymaps',
+          name: '快捷键',
+          open: false,
+          pages: this.buildToJump(keymaps, '../keymap/keymap')
+        },
+        {
+          id: 'cmds',
+          name: '命令行',
+          open: false,
+          pages: this.buildToJump(cmds, '../cmd/cmd')
+        },
+        {
+          id: 'docs',
+          name: '链接',
+          open: false,
+          pages: this.buildToJump(docs, '../website/website')
+        }
+      ]
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
+  },
+
+  buildToJump: function(orgList, baseUrl) {
+    let toJumpList = [];
+    for (let doc of orgList) {
+      toJumpList.push({
+        label: doc.label,
+        url: `${baseUrl}?key=${doc.key}&url=${doc.url}`,
+        enable: doc.enable
+      });
+    }
+    return toJumpList;
   },
 
   displayTab: function(e) {
@@ -154,8 +103,9 @@ Page({
       url: url
     })
   },
-  kindToggle: function (e) {
-    var id = e.currentTarget.id, list = this.data.eMenu;
+  kindToggle: function(e) {
+    var id = e.currentTarget.id,
+      list = this.data.eMenu;
     for (var i = 0, len = list.length; i < len; ++i) {
       if (list[i].id == id) {
         list[i].open = !list[i].open

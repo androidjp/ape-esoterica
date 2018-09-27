@@ -1,0 +1,10 @@
+<!--components/apeCardButton/apeCardButton.wxml-->
+
+<view class="card-btn">
+  <view wx:if="{{isDisabled}}">
+  <label class="code-label-style">{{description}}</label>
+  </view>
+  <view wx:else>
+  <label class="code-label-style" bindtap="gotoWebsite">{{description}}</label>
+  </view>
+</view>

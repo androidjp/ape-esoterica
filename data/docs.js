@@ -1,6 +1,8 @@
 let data = [{
-  "option": "node.green",
-  "url": "https://node.green/"
+  label: 'node.green',
+  key: 'node.green',
+  url: 'https://node.green/',
+  enable: true
 }];
 
 module.exports.data = data;
