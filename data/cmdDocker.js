@@ -72,8 +72,7 @@ const data = [{
       {
         option: '启动/关闭docker服务',
         isCmdList: true,
-        cmd: [
-          {
+        cmd: [{
             option: '方式一',
             cmd: 'sudo systemctl enable docker && sudo systemctl start docker'
           },
@@ -110,13 +109,77 @@ const data = [{
     cmd: 'docker pull jenkins'
   },
   {
-    option: '查看已存在的镜像',
-    cmd: 'docker images'
+    option: '查看已存在的所有顶层镜像',
+    cmd: 'docker images 或者 docker image ls'
   },
   {
     option: '根据镜像 运行一个容器 <可交互式shell>',
-    cmd: 'docker run <-it> jenkins'
+    cmd: 'docker run <-it> <--rm> jenkins <bash>'
   },
+  {
+    option: '查看镜像、容器、数据卷所占用的空间',
+    cmd: 'docker system df'
+  },
+  {
+    option: '查看悬虚镜像<none> [其实本来是mongo3.2,后面由于pull了别的镜像，有依赖到这个mongo，于是镜像移名]',
+    cmd: 'docker image ls -f dangling=true'
+  },
+  {
+    option: '查看已存在的所有中间层镜像',
+    cmd: 'docker image ls -a'
+  },
+  {
+    option: '查看某一个镜像',
+    cmd: 'docker image ls ubuntu'
+  },
+  {
+    option: '(filter)筛选要查看的镜像（如：查看mongo3.2之后建立的镜像）',
+    cmd: 'docker image ls -f since=mongo:3.2'
+  },
+  {
+    option: '仅仅列出所有的docker镜像ID',
+    cmd: 'docker image ls -q'
+  },
+  {
+    option: '按照format格式输出images',
+    cmd: 'docker image ls --format "{{.ID}}:{{.Repository}}"'
+  },
+  {
+    option: '[强行]删除镜像',
+    cmd: 'docker rmi [-f] [image]'
+  },
+  {
+    option: '删除容器',
+    cmd: 'docker rm [container]'
+  },
+  {
+    option: '快速批量删除容器',
+    cmd: 'docker rm `docker ps -a |awk \'{ print $1 }\' | grep [0-9a-z]`'
+  },
+  {
+    option: '删除所有未运行的容器',
+    cmd: 'sudo docker rm $(sudo docker ps -a -q)'
+  },
+  {
+    option: '删除状态为exited的容器',
+    cmd: 'sudo docker rm $(sudo docker ps -qf status=exited)'
+  },
+  {
+    option: '停止所有的container',
+    cmd: 'docker stop $(docker ps -a -q)'
+  },
+  {
+    option: '删除所有的container',
+    cmd: 'docker rm $(docker ps -a -q)'
+  },
+  {
+    option: '删除untagged images',
+    cmd: 'docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+  },
+  {
+    option: '强制删除所有images',
+    cmd: 'docker rmi -f $(docker images -q)'
+  }
 ];
 
 module.exports.data = data;
