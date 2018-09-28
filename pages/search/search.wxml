@@ -18,10 +18,11 @@
   </view>
   <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
     <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell" wx:for="{{searchResults}}" wx:key="{{result.label}}" wx:for-item="result" data-data="{{result.data}}" class="weui-cell" hover-class="weui-cell_active" bindtap='showSearchResult'>
+      <!-- <view class="weui-cell" wx:for="{{searchResults}}" wx:key="{{result.label}}" wx:for-item="result" data-data="{{result.data}}" class="weui-cell" hover-class="weui-cell_active" bindtap='showSearchResult'>
         <view class="weui-cell__bd">{{result.label}}</view>
-      </view>
+      </view> -->
+      <ape-card wx:for="{{searchResults}}" wx:key="{{result.option}}" wx:for-item="result"  cmd-item="{{result}}" />
     </view>
   </view>
-  <ape-card wx:if="{{isShowSearchResult}}" hidden="{{!isShowSearchResult}}" cmd-item="{{searchResult}}" />
+  <!-- <ape-card wx:if="{{isShowSearchResult}}" hidden="{{!isShowSearchResult}}" cmd-item="{{searchResult}}" /> -->
 </view>

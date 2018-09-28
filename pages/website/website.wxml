@@ -1,5 +1,4 @@
 <!--pages/website/website.wxml-->
 <view>
 <label>{{url}}</label>
-<web-view src="{{url}}"></web-view>
 </view>

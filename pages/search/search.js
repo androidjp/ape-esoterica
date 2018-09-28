@@ -1,4 +1,7 @@
 // pages/search/search.js
+
+const SearchUtils = require('../../utils/searchUtils.js');
+
 Page({
 
   /**
@@ -8,37 +11,14 @@ Page({
     inputShowed: false,
     inputVal: "",
     isShowSearchResult: false,
-    searchResults: [{
-        label: '实时搜索文本AAA',
-        data: {
-          option: 'AA',
-          cmd: 'AAA'
-        }
-      },
-      {
-        label: '实时搜索文本BBB',
-        data: {
-          option: 'BB',
-          cmd: 'BBB'
-        }
-      },
-      {
-        label: '实时搜索文本CC',
-        data: {
-          option: 'CC',
-          cmd: 'CCC'
-        }
-      },
-    ],
-    searchResult: {}
+    searchResults: [],
+    // searchResult: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
-  },
+  onLoad: function(options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -88,6 +68,41 @@ Page({
   onShareAppMessage: function() {
 
   },
+
+  getAllFileNames: function() {
+    return [
+      '../../data/cmdConda.js',
+      '../../data/cmdDocker.js',
+      '../../data/cmdGit.js',
+      '../../data/cmdMongo.js',
+      '../../data/cmdPip.js',
+      '../../data/cmdRedis.js',
+      '../../data/cmdSsh.js',
+      '../../data/cmdUbuntu.js',
+      '../../data/keymapChrome.js',
+      '../../data/keymapEvernote.js',
+      '../../data/keymapIdea.js',
+      '../../data/keymapMac.js',
+      '../../data/keymapWeChat.js',
+      '../../data/keymapWin.js'
+    ];
+  },
+
+  initAllDatas: function() {
+    let allDataList = [];
+    let fileNames = this.getAllFileNames();
+    for (let fileName of fileNames) {
+      let dataList = require(fileName);
+      if (dataList && dataList.data) {
+        dataList = dataList.data;
+      }
+      if (dataList.length > 0) {
+        allDataList = allDataList.concat(dataList);
+      }
+    }
+    return allDataList;
+  },
+
   showInput: function() {
     this.setData({
       inputShowed: true
@@ -97,17 +112,21 @@ Page({
     this.setData({
       inputVal: "",
       inputShowed: false,
-      isShowSearchResult: false
+      isShowSearchResult: false,
+      searchResults: []
     });
   },
   clearInput: function() {
     this.setData({
-      inputVal: ""
+      inputVal: "",
+      searchResults: []
     });
   },
   inputTyping: function(e) {
+    let allDataList = this.initAllDatas();
     this.setData({
-      inputVal: e.detail.value
+      inputVal: e.detail.value,
+      searchResults: SearchUtils.getSearchResult(allDataList, e.detail.value)
     });
   },
   showSearchResult: function(e) {
