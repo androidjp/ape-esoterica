@@ -34,6 +34,11 @@ let data = [{
     enable: true
   },
   {
+    label: 'Jenkins命令',
+    key: 'jenkins',
+    enable: true,
+  },
+  {
     label: 'Redis命令',
     key: 'redis',
     enable: true
