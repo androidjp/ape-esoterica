@@ -47,6 +47,36 @@ let data = [
       }
     ]
   },
+  {
+    option: 'Ubuntu查看本机ip等信息',
+    isCmdList: true,
+    cmd: [
+      {
+        option: '首先安装net-tools',
+        cmd: 'sudo apt install net-tools'
+      },
+      {
+        option: '查看本机ip',
+        cmd: 'ifconfig'
+      },
+      {
+        option: '查看所有的服务端口',
+        cmd: 'netstat -ap'
+      },
+      {
+        option: '查看所有被占用的服务端口',
+        cmd: 'netstat -a'
+      },
+      {
+        option: '查看指定端口',
+        cmd: 'netstat -ap |grep 8080'
+      }
+    ]
+  },
+  {
+    option: 'Ubuntu关闭使用某个端口的程序',
+    cmd: 'kill -9 PID号'
+  }
 ]
 
 module.exports.data = data;

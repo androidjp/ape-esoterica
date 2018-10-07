@@ -23,7 +23,7 @@
         "selectedIconPath": "images/team_pressed.png",
         "iconPath": "images/team.png",
         "pagePath": "pages/search/search",
-        "text": "团队"
+        "text": "搜索"
       },
       {
         "selectedIconPath": "images/code_pressed.png",
