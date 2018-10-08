@@ -36,7 +36,7 @@ const data = [
       },
       {
         option: '将下面这一行，追加到你的/etc/apt/sources.list中',
-        cmd: 'https://pkg.jenkins.io/debian-stable/'
+        cmd: 'deb https://pkg.jenkins.io/debian-stable binary/'
       },
       {
         option: '更新apt',

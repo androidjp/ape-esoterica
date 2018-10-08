@@ -49,6 +49,192 @@ const data = [
             cmd: 'docker exec -it myredis redis-cli'
           }
         ]
+      },
+      {
+        option: '方式四（Github源码编译方式）',
+        isCmdList: true,
+        cmd: [
+          {
+            option: '下载源码',
+            cmd: 'git clone --branch 2.8 --depth 1 git@github.com:antirez/redis.git'
+          },
+          {
+            cmd: 'cd redis'
+          },
+          {
+            option: '编译',
+            cmd: 'make'
+          },
+          {
+            option: '运行服务器，daemonize表示在后台运行',
+            cmd: './redis-server --daemonize yes'
+          },
+          {
+            option: '运行命令行',
+            cmd: './redis-cli'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    option: '各个环境下直接安装redis',
+    isCmdList: true,
+    cmd: [
+      {
+        option: 'Mac',
+        cmd: 'brew install redis'
+      },
+      {
+        option: 'ubuntu',
+        cmd: 'apt-get install redis'
+      },
+      {
+        option: 'redhat',
+        cmd: 'yum install redis'
+      },
+      {
+        option: '最终运行客户端',
+        cmd: 'redis-cli'
+      }
+    ]
+  },
+  {
+    option: 'Redis常用命令',
+    isCmdList: true,
+    cmd: [
+      {
+        option: '字符串string (bitmap数据结构)',
+        isCmdList: true,
+        cmd: [
+          {
+            cmd: 'set name 132'
+          },
+          {
+            cmd: 'get name'
+          },
+          {
+            option: '批量set',
+            cmd: 'mset name1 Ming name2 Amy'
+          },
+          {
+            option: '批量get [返回一个列表]',
+            cmd: 'mget name1 name2'
+          },
+          {
+            option: '设置过期时间（单位：s秒）',
+            cmd: 'expire name 5 或者 setex name 5 Ming'
+          },
+          {
+            option: '如果name不存在就执行set创建',
+            cmd: 'setnx name Ming'
+          }
+        ]
+      },
+      {
+        option: 'Number数字计数',
+        isCmdList: true,
+        cmd: [
+          {
+            option: '注意：整数最大是Long.Max(9223372036854775807)',
+            cmd: 'set age 30'
+          },
+          {
+            option: '加1',
+            cmd: 'incr age'
+          },
+          {
+            option: '加 N',
+            cmd: 'incrby age N'
+          },
+        ]
+        
+      },
+      {
+        option: 'List列表（本质是链表，index索引查询是O(N)，删除效率是O(1)）',
+        isCmdList: true,
+        cmd: [
+          {
+            option:'初始化并从右边插入3个元素',
+            cmd: 'rpush books A B C'
+          },
+          {
+            option: '列表长度',
+            cmd: 'llen books'
+          },
+          {
+            option: '插入/删除元素',
+            cmd: 'rpush / lpush / rpop / lpop'
+          },
+          {
+            option: '查找索引index为1的元素（效率低，慎用）',
+            cmd: 'lindex books 1'
+          },
+          {
+            option: '获取所有元素（遍历列表，低效，慎用）',
+            cmd: 'lrange books 0 -1'
+          },
+          {
+            option: '只保留区间M到N的元素',
+            cmd: 'ltrim books 1 3 [表示只保留第2,3个元素]'
+          }
+        ]
+      },
+      {
+        option: 'Hash字典',
+        isCmdList: true,
+        cmd: [
+          {
+            option: '初始化redis字典',
+            cmd: 'hset books java "think in java"'
+          },
+          {
+            option: '遍历redis字典（key和value）',
+            cmd: 'hgetall books'
+          },
+          {
+            option: '查看字典元素个数',
+            cmd: 'hlen books'
+          },
+          {
+            option: '获取字典指定元素',
+            cmd: 'hget books java'
+          },
+          {
+            option: '批量添加字典元素',
+            cmd: 'hmset books java "aaa" python "bbb"'
+          },
+          {
+            option: '字典某个元素的值加1',
+            cmd: 'hincrby user-Ming age 1'
+          }
+        ]
+      },
+      {
+        option:'Set集合',
+        isCmdList: true,
+        cmd: [
+          {
+            option: '插入元素',
+            cmd: 'sadd books python'
+          },
+          {
+            option: '遍历',
+            cmd: 'smembers books'
+          },
+          {
+            option: '判断是否存在某个元素',
+            cmd: 'sismember books java'
+          },
+          {
+            option: '集合长度',
+            cmd: 'scard books'
+          },
+          {
+            option: '弹出一个集合元素',
+            cmd: 'spop books'
+          }
+        ]
       }
     ]
   }

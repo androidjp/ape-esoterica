@@ -42,6 +42,11 @@ let data = [{
     label: 'Redis命令',
     key: 'redis',
     enable: true
+  },
+  {
+    label: 'Jdk命令',
+    key: 'jdk',
+    enable: true
   }
 ];
 
