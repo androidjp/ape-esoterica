@@ -1,5 +1,5 @@
 let data = [{
-    option: '阿里云Ubuntu16.04快速安装MongoDB',
+    option: 'Ubuntu16.04/Ubuntu18.04快速安装MongoDB',
     isCmdList: true,
     cmd: [{
         option: '',
