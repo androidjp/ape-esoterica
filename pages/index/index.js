@@ -52,6 +52,7 @@ Page({
     })
   },
   onClick: function(e) {
+    console.log('onClick ...')
     wx.navigateTo({
       url: '../home/home'
     })
