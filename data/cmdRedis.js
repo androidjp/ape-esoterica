@@ -176,7 +176,7 @@ const data = [
           },
           {
             option: '只保留区间M到N的元素',
-            cmd: 'ltrim books 1 3 [表示只保留第2,3个元素]'
+            cmd: 'ltrim books 1 3 [表示只保留第2,3,4共3个元素]'
           }
         ]
       },
@@ -235,6 +235,53 @@ const data = [
             cmd: 'spop books'
           }
         ]
+      },
+      {
+        option: 'ZSet有序集合',
+        tips: '类似Java的SortedSet和HashMap的结合体，给每一个value赋予一个score，代表这个value对的排序权重。内部实现是[跳跃列表]。当最后一个value被移除时，zset自动删除，内存被回收。',
+        isCmdList: true,
+        cmd: [
+          {
+            option: '插入元素',
+            cmd: 'zadd books 9.0 "think in java"'
+          },
+          {
+            option: '遍历所有元素（默认按照score升序排序）',
+            cmd: 'zrange books 0 -1'
+          },
+          {
+            option: 'score降序遍历所有元素',
+            cmd: 'zrevrange books 0 -1'
+          },
+          {
+            option: '查看集合长度',
+            cmd: 'zcard books'
+          },
+          {
+            option: '获取指定value的score',
+            cmd: 'zscore books "think in java"'
+          },
+          {
+            option: '查看指定value的排名',
+            cmd: 'zrank books "think in java"'
+          },
+          {
+            option: '根据score区间遍历zset',
+            cmd: 'zrangebyscore books 8.5 9.5'
+          },
+          {
+            option: '根据score区间(-无穷infinite,8.91]遍历zset (`withscores`表示显示value的score)',
+            cmd: 'zrangebyscore books -inf 8.91 withscores'
+          },
+          {
+            option: '删除元素',
+            cmd: 'zrem books "think in java"'
+          }
+        ]
+      },
+      {
+        option: '查看存活时间ttl（注意：每一次set完，需要重新设置expire，否则ttl会消失）',
+        cmd:'ttl books'
       }
     ]
   }
