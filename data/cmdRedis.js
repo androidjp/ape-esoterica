@@ -282,8 +282,40 @@ const data = [
       {
         option: '查看存活时间ttl（注意：每一次set完，需要重新设置expire，否则ttl会消失）',
         cmd:'ttl books'
+      },
+      {
+        option: '查看所有的key',
+        cmd: 'keys *'
+      },
+      {
+        option: '查看当前DB的size',
+        cmd: 'dbsize'
+      },
+      {
+        option: '选择一个DB',
+        cmd: 'select <Num>'
+      },
+      {
+        option: '清空db',
+        cmd: 'flushdb'
+      },
+      {
+        option: '清空所有db',
+        cmd: 'flushall'
       }
     ]
+  },
+  {
+    option: 'redis-rdb-tools安装',
+    cmd: 'pip3 install rdbtools --user'
+  },
+  {
+    option: 'redis手动生成一次快照文件(默认文件名：dump.rdb)',
+    cmd: '> save'
+  },
+  {
+    option: '用redis-rdb-tools查看redis快照相关统计信息',
+    cmd: 'rdb -c memory dump.rdb > ~/Documents/memory1.csv'
   }
 ];
 

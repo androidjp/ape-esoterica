@@ -179,6 +179,37 @@ const data = [{
   {
     option: '强制删除所有images',
     cmd: 'docker rmi -f $(docker images -q)'
+  },
+  {
+    option: '指定宿主某目录对应容器目录 [:ro表示readOnly]',
+    cmd: 'docker run -d -v /docker/redis:/data[:ro] -p 6379:6379 --name myRedis redis'
+  },
+  {
+    option: '指定Docker容器挂载目录（高级用法：数据卷）',
+    isCmdList: true,
+    cmd: [
+      {
+        option: '首先，起一个普通的容器',
+        cmd: 'docker run -v /home/docker/env01:/usr/Downloads --name dataVol ubuntu64 /bin/bash'
+      },
+      {
+        option: '然后，启动你的目标容器，并挂载到上一个容器中',
+        cmd: 'docker run -it --volumes-from dataVol redis redis-cli'
+      }
+    ]
+  },
+  {
+    option: 'Docker容器内外互相拷贝数据',
+    isCmdList: true,
+    cmd: [
+      {
+        option: '从容器拷贝文件到主机上',
+        cmd: 'docker cp <containerId>:/file/path/within/container /host/path/target'
+      },
+      {
+        option: '从主机上拷贝文件到容器内, 最好办法还是先用-v将容器目录挂载到主机目录中，然后直接copy'
+      }
+    ]
   }
 ];
 
