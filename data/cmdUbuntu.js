@@ -12,7 +12,7 @@ let data = [
     cmd: 'sudo apt-get update'
   },
   {
-    option: 'apt设置阿里镜像',
+    option: 'apt设置国内镜像',
     isCmdList: true,
     cmd: [
       {
@@ -28,6 +28,10 @@ let data = [
         cmd: 'sudo apt-get update'
       }
     ]
+  },
+  {
+    option: 'apt设置阿里镜像',
+    cmd: 'evernote `Ubuntu apt-get 国内镜像 笔记`'
   },
   {
     option:'环境变量配置',

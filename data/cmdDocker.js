@@ -210,6 +210,10 @@ const data = [{
         option: '从主机上拷贝文件到容器内, 最好办法还是先用-v将容器目录挂载到主机目录中，然后直接copy'
       }
     ]
+  },
+  {
+    option: 'Ubuntu发现docker pull失败报错`Error response from daemon: Get https://registry-1.docker.io/`',
+    cmd: '$ echo "DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=http://f2d6cb40.m.daocloud.io\"" | sudo tee -a /etc/default/docker 然后 restart docker'
   }
 ];
 
