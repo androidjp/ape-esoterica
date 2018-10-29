@@ -14,6 +14,11 @@ let data = [{
     enable: true
   },
   {
+    label: 'Mysql命令',
+    key: 'mysql',
+    enable: true
+  },
+  {
     label: 'Ubuntu命令',
     key: 'ubuntu',
     enable: true
