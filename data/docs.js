@@ -18,6 +18,16 @@ let data = [{
   key: 'ISO国内镜像资源',
   url: '阿里：https://opsx.alibaba.com/mirror  网易：http://mirrors.163.com/',
   enable: true
+}, {
+  label: '破解软件下载地址[易破解]',
+    key: '破解软件下载地址[易破解]',
+    url: 'http://www.yipojie.cn',
+    enable: true
+}, {
+  label: 'Office Plus Tools',
+    key: 'Office Plus Tools',
+    url: 'https://otp.landian.la/zh-cn/',
+    enable: true
 }];
 
 module.exports.data = data;
